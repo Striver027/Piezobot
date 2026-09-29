@@ -1,5 +1,15 @@
 # Altium Designer local working files — generated automatically, not part of the
-# released design files (see hardware/README.md).
+# released design files (see Hardware/README.md).
 History/
 __Previews/
 *.PrjPcbStructure
+
+# Cloud-sync temporary files
+*.baiduyun.uploading.cfg
+
+# Local Chinese translation of the READMEs (for review only, not for release)
+README.zh-CN.md
+
+# Raw Altium BOM exports (GBK, Chinese) used to build Docs/BOM_*.xlsx — working
+# files, not part of the release.
+Docs/source/

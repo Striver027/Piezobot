@@ -1,10 +1,10 @@
-# PiezoBot
+# Piezobot
 
 **A desktop-scale, low-cost stick–slip piezoelectric robot for validating
 swarm-intelligence algorithms that require fine relative positioning.**
 
 This repository contains the editable hardware design files and firmware that
-accompany the HardwareX article on PiezoBot. It is intended to be sufficient for
+accompany the HardwareX article on Piezobot. It is intended to be sufficient for
 another group to reproduce the robot and reproduce the measurements reported in
 the article.
 
@@ -12,7 +12,7 @@ the article.
 
 ## Overview
 
-PiezoBot is a small mobile robot whose motion is produced by a **stick–slip
+Piezobot is a small mobile robot whose motion is produced by a **stick–slip
 (friction–inertia) mechanism**: two piezoelectric stacks drive the robot across a
 flat ferromagnetic surface, while N52 permanent magnets simultaneously provide the
 preload force and the friction surface. Driving the stacks with a sawtooth waveform
@@ -42,7 +42,7 @@ swarm-robotics test platform.
 | Communication | 433 MHz wireless module |
 | Working surface | Flat, ferromagnetic (tests performed on 430 stainless steel) |
 
-> PiezoBot is an **open-loop, single-prototype** platform at this stage: displacement
+> Piezobot is an **open-loop, single-prototype** platform at this stage: displacement
 > is estimated from the number of drive cycles, with no position feedback. Positioning
 > error is intended to be compensated by the vision system of the swarm-validation
 > platform.
@@ -50,16 +50,16 @@ swarm-robotics test platform.
 ## Repository structure
 
 ```
-PiezoBot/
+Piezobot/
 ├── README.md                 This file
 ├── LICENSE                   CC BY-SA 4.0 (full legal text)
-├── hardware/                 Editable PCB source projects, PDFs and Gerber files
+├── Hardware/                 Editable PCB source projects, PDFs and Gerber files
 │   └── README.md             File-by-file inventory of the hardware folder
-├── CAD/                      Mechanical CAD: complete STEP assembly (all parts inside)
+├── CAD/                      Mechanical CAD: Fusion 360 sources and neutral STEP files
 │   └── README.md             Description of the CAD files
-├── docs/                     Documentation and the editable bill of materials
+├── Docs/                     Documentation and the editable bill of materials
 │   ├── README.md             Index of the documentation
-│   └── BOM.csv               Bill of materials (editable spreadsheet)
+│   └── BOM_<board>.xlsx      Editable bill of materials, one file per board
 └── firmware/                 STM32 firmware — to be added before the v1.0 release
 ```
 
@@ -86,11 +86,14 @@ battery adapter that powers the robot.
 The PCB sources are **Altium Designer** files (`.PrjPcb`, `.SchDoc`, `.PcbDoc`);
 PDF schematics and fabrication-ready Gerber/drill archives are provided alongside them
 so that the boards can be reviewed and manufactured without Altium. See
-[`hardware/README.md`](hardware/README.md) for the complete file inventory.
+[`Hardware/README.md`](Hardware/README.md) for the complete file inventory.
 
-The mechanical parts are provided as a single STEP assembly in
-[`CAD/`](CAD) — it contains all parts of the robot, including the CNC-machined
-aluminium base and the 3D-printed shell and LCD retaining ring.
+The mechanical design is provided in [`CAD/`](CAD) in two formats: the editable
+Autodesk Fusion 360 sources (`Piezobot_Assembly.f3z`, `CNC/aluminium_base.f3d`) and the
+same geometry as neutral STEP files (`Piezobot_Assembly.step`, `CNC/aluminium_base.step`).
+The assembly contains all parts of the robot, including the CNC-machined aluminium base
+and the 3D-printed shell and LCD retaining ring; the parts to be printed are also
+provided as STL. See [`CAD/README.md`](CAD/README.md) for the file inventory.
 
 ## Firmware
 
@@ -123,31 +126,31 @@ magnets and the steel plate. Instant adhesive is used during assembly.
 
 ## Bill of materials
 
-Components other than the PCBs. An editable version of this table, using the same
-column format as the article's Bill of materials summary, is provided in
-[`docs/BOM.csv`](docs/BOM.csv).
+Components other than the PCBs. The electronics are itemised board by board in the
+editable files in [`Docs/`](Docs) (`BOM_<board>.xlsx`, one per board, in the same column
+format as the article's Bill of materials summary).
 
 | Component | Type | Specification | Qty |
 |---|---|---|---|
 | NdFeB magnet (N52) | Drive | — | 4 |
-| Piezoelectric stack | Drive | AL1.65×1.65×5D-4F | 2 |
-| Shell | Structure | 3D printed | 1 |
+| piezoelectric stack | Drive | AL1.65×1.65×5D-4F | 2 |
+| shell | Structure | 3D printed | 1 |
 | LCD retaining ring | Structure | 3D printed | 1 |
-| Base | Structure | CNC machined (aluminium) | 1 |
-| Brass cap screw | Structure | M2.5 × 4 | 2 |
-| Brass ball plunger | Friction | M4 | 3 |
+| aluminium base | Structure | CNC machined (aluminium) | 1 |
+| brass cap screw | Structure | M2.5 × 4 | 2 |
+| brass ball plunger | Friction | M4 | 3 |
 | FPC | Wiring | — | 1 |
-| Instant adhesive (401) | Consumable | — | — |
-| Magnetic pole indicator card | Tool | — | — |
+| instant adhesive (401) | Consumable | — | — |
+| magnetic pole indicator card | Tool | — | — |
 
 ## Documentation
 
-Additional documentation is collected in the [`docs/`](docs) folder:
+Additional documentation is collected in the [`Docs/`](Docs) folder:
 
-- [`docs/README.md`](docs/README.md) — index of the assembly figures, wiring diagram and
+- [`Docs/README.md`](Docs/README.md) — index of the assembly figures, wiring diagram and
   operating notes;
-- [`docs/BOM.csv`](docs/BOM.csv) — editable bill of materials in the column format used
-  by the article.
+- [`Docs/`](Docs) — editable bills of materials, one file per board (`BOM_<board>.xlsx`),
+  in the column format used by the article.
 
 ## Licence
 
@@ -158,7 +161,7 @@ appropriate credit and license any derivative work under the same terms.
 
 ## How to cite
 
-If you use PiezoBot in your work, please cite **both** the article and this repository.
+If you use Piezobot in your work, please cite **both** the article and this repository.
 
 **Article**
 
@@ -169,12 +172,12 @@ If you use PiezoBot in your work, please cite **both** the article and this repo
 ```bibtex
 @software{piezobot_v1,
   author  = {Xing, Zhizhou},
-  title   = {PiezoBot: design files and firmware for a stick--slip piezoelectric
+  title   = {Piezobot: design files and firmware for a stick--slip piezoelectric
              robot for swarm-intelligence algorithm validation},
   year    = {2026},
   version = {v1.0},
   doi     = {10.5281/zenodo.XXXXXXX},
-  url     = {https://github.com/Striver027/PiezoBot}
+  url     = {https://github.com/Striver027/Piezobot}
 }
 ```
 
