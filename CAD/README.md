@@ -44,7 +44,7 @@ CAD/
 | File | Process |
 |---|---|
 | `CNC/aluminium_base.step` | CNC machining (6061 aluminium) |
-| `STLs(3D Print)/shell.stl` | 3D printing (PLA material, 0.2 mm nozzle) |
+| `STLs(3D Print)/shell.stl` | 3D printing (PLA, 0.2 mm hardened steel nozzle, 0.1 mm layer height) |
 | `STLs(3D Print)/LCD_retaining_ring_0.99in.stl` | 3D printing (same process as above) |
 
 More detailed printing and machining parameters (material, layer height, infill, etc.) are given in the accompanying article.

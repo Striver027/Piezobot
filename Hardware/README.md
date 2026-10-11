@@ -111,8 +111,9 @@ interface.
 Battery adapter board. It has exactly the same structure and layout as the DAP board, but the
 lead connections inside the board have been thickened and copper-poured, so the **DAP board and
 the BAT board are not interchangeable**: only their large boards are the same — the large board
-in the BAT panel can still be connected to a DAPLink programmer, while the small board is used
-to retrofit a lithium-battery connector to power the robot.
+in the BAT panel can still be connected to a DAPLink programmer, while the small board has the
+battery leads soldered directly to its pads and converts them into the plug that powers the
+robot.
 
 | File | Format | Purpose |
 |---|---|---|
