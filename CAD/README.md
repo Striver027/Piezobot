@@ -37,7 +37,7 @@ CAD/
 - `Piezobot_Assembly.f3z` and `CNC/aluminium_base.f3d` open directly in Autodesk Fusion 360; the `.step` files carry the same geometry in a neutral format that any CAD software can import.
 - `Piezobot_Assembly` contains the whole robot; you can locate a part in the assembly to see its assembled state and position.
 - The two `.stl` files can be sliced and 3D printed directly.
-- The assembly steps of the mechanical parts are described step by step in the accompanying HardwareX article: including the base and the stick–slip mechanism, the fixing and wiring of the PZT board, and the assembly of the screen, retaining ring and shell.
+- The assembly steps of the mechanical parts are described step by step in the accompanying HardwareX article: including the base and the stick-slip mechanism, the fixing and wiring of the PZT board, and the assembly of the screen, retaining ring and shell.
 
 ## Fabrication
 

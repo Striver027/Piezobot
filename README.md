@@ -1,11 +1,11 @@
 # Piezobot
 
-**A desktop-scale, low-cost stick–slip piezoelectric robot for validating swarm
+**A desktop-scale, low-cost stick-slip piezoelectric robot for validating swarm
 algorithms that require fine relative positioning.**
 
 ## Overview
 
-Piezobot is a small mobile robot whose motion is produced by a **stick–slip
+Piezobot is a small mobile robot whose motion is produced by a **stick-slip
 (friction–inertia) mechanism**: two piezoelectric stacks drive it across a flat
 ferromagnetic surface, while N52 magnets simultaneously provide the preload force and the
 friction surface. Driving the stacks with a sawtooth waveform generates a small net

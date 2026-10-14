@@ -138,7 +138,9 @@ int main(void)
 	HAL_UART_Transmit(&huart1, (uint8_t *)hc12_msg, (uint16_t)strlen(hc12_msg), 100U);
 
 	Protocol_Init();
-
+	HAL_GPIO_WritePin(IPS_BLK_GPIO_Port, IPS_BLK_Pin ,GPIO_PIN_SET);
+	LCD_ShowString(10,50,"Power_L:",RED,WHITE,16,0);
+	LCD_ShowString(10,70,"Power_R:",RED,WHITE,16,0);
 
 	/* optional HC-12 settings: uncomment one line to write it into the module */
 //	hc12_ret = HC12_Set(HC12_CMD_B,  HC12_BAUD_9600);   /* baud rate        */
@@ -181,10 +183,12 @@ int main(void)
 				rate_right = spd * cosf(angle);	/* inner wheel scaled by cos(angle) */
 			}
 
+
 			RunWave_Gen(toothsheet_fullwave, rate_left,  toothsheet_runwave_left);
 			RunWave_Gen(toothsheet_fullwave, rate_right, toothsheet_runwave_right);
-			LCD_ShowFloatNum1(25, 82, rate_left,  4, RED, WHITE, 16);   /* rate left  */
-			LCD_ShowFloatNum1(25, 98, rate_right, 4, RED, WHITE, 16);   /* rate right */
+
+			LCD_ShowFloatNum1(80,50, rate_left,  4, RED, WHITE, 16);   /* rate left  */
+			LCD_ShowFloatNum1(80,70, rate_right, 4, RED, WHITE, 16);   /* rate right */
 			receive_state = IDLE;
 		}
 		
